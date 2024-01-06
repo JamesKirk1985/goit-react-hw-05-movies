@@ -1,0 +1,15 @@
+.header {
+  border-bottom: solid 5px black;
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  padding-left: 40px;
+  height: 40px;
+  align-items: center;
+}
+.page {
+  text-decoration: none;
+}
+.active {
+  color: brown;
+}

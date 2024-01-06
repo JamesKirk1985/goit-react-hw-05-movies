@@ -1,0 +1,9 @@
+.button {
+  border: solid 1px rgb(55, 0, 128);
+  background-color: #7cc7ae;
+  border-radius: 5px;
+}
+.button:hover,
+.button:focus {
+  background-color: #4494d1;
+}
