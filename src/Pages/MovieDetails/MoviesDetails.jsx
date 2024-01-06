@@ -10,7 +10,12 @@ const MoviesDetails = ({children}) => {
     const [movieDetails, setMovieDetails] = useState(null)
     const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700'
 
-    async function getMoviesDetails() { 
+     
+    
+    useEffect(() => {
+        if (movieId) {
+            getMoviesDetails()
+            async function getMoviesDetails() { 
     try {
         const data = await getSearchMovieFunction(`movie/${movieId}`)        
         setMovieDetails(data)        
@@ -19,10 +24,8 @@ const MoviesDetails = ({children}) => {
     } catch (error) {
         console.log(error.message)
     }
-    }   
-    
-    useEffect(() => {
-        if (movieId) { getMoviesDetails() }
+    }  
+        }
     }, [movieId])
     
 

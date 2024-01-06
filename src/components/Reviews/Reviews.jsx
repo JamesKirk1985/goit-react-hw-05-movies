@@ -11,10 +11,9 @@ const Reviews = () => {
 
     useEffect(() => {
         setId(film.movieId);
-        if(id){getMoviesCast()};        
-    }, [id])
-
-    async function getMoviesCast() { 
+        if (id) {
+            getMoviesCast()
+            async function getMoviesCast() { 
     try {
         const data = await getMovieFunction(`movie/${film.movieId}/reviews`)        
         setReviews(data.results)          
@@ -24,6 +23,11 @@ const Reviews = () => {
         console.log(error.message)
     }
 }   
+
+        };        
+    }, [film.movieId, id])
+
+    
 
 
     return (<>

@@ -14,10 +14,9 @@ const Cast = () => {
 
     useEffect(() => {
         setId(film.movieId);
-        if(id){getMoviesCast()};        
-    }, [film, id])
-
-    async function getMoviesCast() { 
+        if (id) {
+            getMoviesCast()
+            async function getMoviesCast() { 
     try {
         const data = await getMovieFunction(`movie/${film.movieId}/credits`)        
         setCast(data.cast)        
@@ -27,6 +26,11 @@ const Cast = () => {
         console.log(error.message)
     }
     }   
+        
+        };        
+    }, [film, id])
+
+    
     
     return <>
            <ul>
