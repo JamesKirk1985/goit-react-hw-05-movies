@@ -12,7 +12,7 @@ const Reviews = () => {
     useEffect(() => {
         setId(film.movieId);
         if(id){getMoviesCast()};        
-    }, [film, id])
+    }, [id])
 
     async function getMoviesCast() { 
     try {
