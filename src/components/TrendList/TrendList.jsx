@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom" 
 
-export const TrendList = ({ goToMovieDetails, list }) => {
+export const TrendList = ({ list }) => {
 
     const [moviesList, setMoviesList] = useState([])
     const location = useLocation()
@@ -10,9 +10,9 @@ export const TrendList = ({ goToMovieDetails, list }) => {
     
     return (
         <>            
-            <ul onClick={goToMovieDetails}>
+            <ul >
                 {moviesList.length>0 && moviesList.map(({ title, id }) => {                    
-                    return <li key={id}><Link to={'movies/' + id.toString()} id={id} state={{from: location}}>{title}</Link></li>
+                    return <li key={id}><Link to={'movies/'+id.toString()} state={{from: location}}>{title}</Link></li>
                 })}
             </ul>
         </>)

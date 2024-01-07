@@ -13,7 +13,10 @@ export const MoviesList = ({ goToMovieDetails, list }) => {
         <>            
             <ul onClick={goToMovieDetails}>
                 {moviesList.length>0 && moviesList.map(({ title, id }) => {                    
-                    return <li key={ id}><Link to={id.toString()} id={id} state={{from: location}}>{title}</Link></li>
+                    return <li key={id}>
+                        <Link
+                            to={id.toString()}
+                            state={{ from: location }}>{title}</Link></li>
                 })}
             </ul>
         </>)
